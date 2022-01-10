@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
   <title>Pokesearch</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <img id="logo" src="logo.png" alt="logo pokedex" />
 
@@ -16,20 +18,24 @@
   </form>
 
   <?php
-    if(isset($pokemons)) {
+  // Si on trouve des Pokemons qui correspondent à la recherche
+  // On les affiche
+  if (isset($pokemons)) :
   ?>
-      <div id="searchlist" >
-      <?php
-        foreach($pokemons as $pokemon) {
-      ?>
-        <ul id='ulSearchlist'>
+    <div id="searchlist">
+      <ul id='ulSearchlist'>
+        <?php
+        // On affiche les Pokemons dans la liste
+        foreach ($pokemons as $pokemon) :
+        ?>
           <li>
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokemon["id"]; ?>.png" />
-            <a href=""><?= $pokemon["name"]; ?></a>
-          </li>  
-        </ul>
-      <?php }; ?>
+            <a href="#"><?= $pokemon["name"]; ?></a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
     </div>
-  <?php }; ?>
+  <?php endif; ?>
 </body>
+
 </html>
