@@ -29,8 +29,8 @@
         foreach ($pokemons as $pokemon) :
         ?>
           <li>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokemon["id"]; ?>.png" />
-            <a href="#"><?= $pokemon["name"]; ?></a>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokemon->id; ?>.png" />
+            <a href="#"><?= $pokemon->name . " [" . $pokemon->type . "]"; ?></a>
           </li>
         <?php endforeach; ?>
       </ul>
